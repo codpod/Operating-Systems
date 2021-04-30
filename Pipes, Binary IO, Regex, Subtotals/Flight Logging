@@ -1,0 +1,27 @@
+Set up pipe:
+1) Call fork() to create a parent/child setup.
+2) Set up a pipe between parent and child so that the parent is the producer and the child is the consumer.
+
+3) The interlacing of messages printed by different processes will depend on the timing of your program and does not have to match the sample output. However, individual messages should not be broken up. Prevent this using the same method as in HW2:
+	a) Issue the cout << unitbuf command at the beginning of your program.
+	b) Use only use one extraction operator (“<<”) to print each message, using ostringstream or
+	equivalent to build the message before printing and using \n instead of endl to avoid using a second
+	extraction operator.
+
+Parent processing:
+1) Read input file from the file specified a the command line parameter. If no parameter is given, use as a default ~t90rkf1/d480/dhw/hw3-air/resv.txt. A smaller test file named resv0.txt is available.
+2) For each record do the following:
+	a) Print the input record.
+	b) Write the data to the pipe as a C-string (i.e., with a terminator).
+	c) Print the same data and its length (not including the terminator).
+3) At the end of the file, print a count of the number of input records read.
+
+Child processing:
+1) Read each entry as follows:
+	a) Read the C-string.
+	c) Break the entry into fixed-length fields and save the fields in a vector of pointers to objects, just as
+		in HW1.
+2) Use regular expressions to break the input record into individual entries. Build keys with fixed-length fields.
+3) Use a sort function to sort the entries by date, flight number, city pair, last name and first name. A city pair consists of an origin and destination city. Date, flight number and city pair determine a flight leg. Use a sequence-preserving sort so that the same input will always produce the same output. 
+   For a vector, that is the stable_sort function. The record locator (= airline lingo for reservation ID) is printed but is not a sort key, since it doesn’t matter to anyone but the passenger.
+4) Print the entries with subtotals by flight leg, flight number, date, year/month, and grand total. 
