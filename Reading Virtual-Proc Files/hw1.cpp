@@ -1,10 +1,6 @@
 /***************************************
 
- Class:     CSCI 480 - 2
- Program:   Assignment 1
  Author:    Cody McAntire
- Z-number:  z1859456
- Date Due:  01/29/2020
 
  Purpose: Reading Virtual/proc files
  Execution: ./hw1.exe
