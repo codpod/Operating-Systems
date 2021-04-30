@@ -1,0 +1,13 @@
+The intersection of Lincoln and Annie Glidden. Four traffic lanes are shown: eastbound Lincoln, westbound Lincoln, northbound Annie Glidden and southbound Annie Glidden.
+						 
+Car A1 is in the eastbound lane of Lincoln, but it is west of the intersection, so it has not crossed the intersection yet. In order to cross the intersection, it needs to 
+cross the southwest portion of the intersection and then the southeast portion. Therefore it needs possession of the two spaces labeled SW and SE on the diagram before starting 
+to cross. (If it only obtained possession of one space at a time, it could be stuck in the middle of the intersection, blocking cross traffic, while waiting for the second 
+space to become available. This is known as “blocking the box” and is something you are taught not to do in driver’s ed.)
+
+We will represent each of the four sections of the intersection by a semaphore. As we learned in class, to prevent deadlock, each car must grab its semaphores in the same 
+order, for example, alphabetical order. This correct use of semaphores can prevent a “blocking the box” deadlock, where, for example, a car on eastbound Lincoln (e.g., A1)
+owns SW and is waiting for SE, a car on northbound Annie Glidden (e.g., B1) owns SE and is waiting for NE, a car on westbound Lincoln (e.g., C1) owns NE and is waiting for 
+NW, and a car on southbound Annie Glidden (e.g., D1) owns NW and is waiting for SW.
+Each car will write to cout to specify its status. Therefore a fifth semaphore is needed so that two cars can’t write to cout at the same time, causing interlaced output.
+Use a semaphore instead of ostringstream to prevent interlaced output.
