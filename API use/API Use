@@ -1,0 +1,54 @@
+API use: uname, getenv, fork, wait and system
+
+A. Use of uname API
+1. Obtain the following information from files in /proc/sys/kernel. As before, use C++ string functions on a C++ string (instance of the string class), not C string functions, subscript use, or use of a character array)
+a) ostype
+b) hostname
+c) osrelease
+d) version
+
+2. A more common way to retrieve this information in a running program is with the system call uname. 
+Since uname is a system function, you need to do man 2 uname to learn how to use it. Include <sys/utsname.h> to get the correct data structure, then call uname with a suitable calling sequence to get the following information:
+a) sysname
+b) nodename
+c) release
+d) version
+e) machine
+
+3. Print a neatly-lined up chart showing the following:
+		Field			File data			API data
+	ostype			(data)				(data)
+	hostname		(etc.)
+
+If a field is included in both 1) and 2) above, print the results on the same line. If a field is included in only one of 1) and 2) above, leave the other table entry blank.
+Cut the version before the date (i.e., before the left parenthesis) so that it does not overflow the line width.
+ 
+
+B. Use of getenv API
+1. Call getenv() to get the value of PATH. For example, my path is:
+	/home/turing/t90rkf1/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:
+	/usr/games
+2. Use C++ string functions on a C++ string (instance of the string class), not C string functions, subscript use, or use of a character array) to break the path into individual entries.
+3. Print the path entries, one per line. Next to each path entry, print its length, i.e., the number of bytes in that entry. Make sure the lengths are right-justified in a column.
+After the last entry, skip a line, then print a total line giving the total number of bytes for the path entries and the total number of entries. You can check that the total number of bytes is correct by looking at the length of the path entry minus the number of colons.
+
+C. Fork, wait and system
+1. Call fork() to create a new process, which we will call the “middle” process. Then call fork() again to create two new children.
+Each child or middle process will print out the following information, one sentence per line, with a blank line after the full message:
+Child: My PID is xxxx.
+My parent is yyyy.
+
+Middle: My PID is xxxx.
+My parent is yyyy.
+My child is wwww.
+
+After printing this information, the child or middle process should sleep for 3 seconds, then print the following message (followed by a blank line) and exit:
+Child: I am awake.
+
+Middle: I am awake.
+
+In the initial parent process, print the following message, formatted as above.
+Parent:  My PID is xxxx.
+My parent is yyyy.
+My children are wwww and zzzz.
+
