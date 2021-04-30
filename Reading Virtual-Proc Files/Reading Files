@@ -1,0 +1,28 @@
+Answer the questions below about the machine you are running by writing a program that reads the virtual files /proc/cpuinfo and /proc/uptime.
+
+A: Questions about the cpuinfo file
+  1. What are the names of the files you are reading? (They will either be /proc/cpuinfo and
+      /proc/cpuinfo or the files listed in the parms.)
+  2. How many records are there in the first file?
+  3. How many characters are in the first file?
+  4. Which system utility or utilities did you use to verify that your answers to questions 2 and 3
+       are correct?
+B: Questions about the configuration
+  1. How many processors (total cores) does the machine have?
+  2. How many physical CPUs?
+  3. What are the physical ids? (List them with spaces or commas between them, or “none” if
+      no physical ids are listed.)
+  4. Are there any processors that share cache?
+C. Questions about the first processor in the file
+  1. What is its physical address size?
+  2. What is its virtual address size?
+  3. What is the ratio of virtual address size to physical address size? (You can calculate that as
+       2^(virtual bits - physical bits.)
+  4. Does it have a floating point unit?
+  5. How big is the cache in KB?
+  6. How big is the cache in bytes?
+D. Questions about uptime
+  1. How long has the system been up in seconds? Use the first number in /proc/uptime (or
+      its replacement file) to determine this.
+  2. Express that time in days, hours, minutes and seconds. Round off to the nearest tenth of a
+      second (one decimal place, e.g., 7 days, 1 hour, 2 minutes, and 4.3 seconds)
