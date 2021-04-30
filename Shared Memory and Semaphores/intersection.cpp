@@ -1,15 +1,10 @@
 /******************************************************************
 
-Class:     CSCI 480 - 2
-Program:   Assignment 4
 Author:    Cody McAntire
-Z-number:  z1859456
-Date Due:  04/23/2021
 
 Purpose:	Simulate a four section intersection and it's traffic
 			using semaphores
-Execution: ./hw4.exe
-
+			
 *******************************************************************/
 #include <semaphore.h>
 #include <sys/shm.h>
@@ -27,12 +22,9 @@ Execution: ./hw4.exe
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-#define TEN_MILLION 10000000L
-#define BUFSIZE 1024
 using namespace std;
 
-using namespace std;
+
 #define BUFFER_SIZE 35 
 #define ACTION 2 
 #define CAR_X 9 
