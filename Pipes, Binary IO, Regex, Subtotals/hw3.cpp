@@ -1,16 +1,13 @@
 /******************************************************************
 
-Class:     CSCI 480 - 2
-Program:   Assignment 3
 Author:    Cody McAntire
-Z-number:  z1859456
-Date Due:  04/13/2021
 
 Purpose:	1. uses fork() to create a partent/child set up
 			2. pipe set up between parent and child so parent is 
             	producer and child is consumer
 			3. interlacing of messages printed by different 
             	processes depend on timing of program
+		
 Execution: ./hw3.exe
 
 *******************************************************************/
