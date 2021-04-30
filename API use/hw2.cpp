@@ -1,12 +1,9 @@
 /********************************************************
 
-Class:     CSCI 480 - 2
-Program:   Assignment 2
 Author:    Cody McAntire
-Z-number:  z1859456
-Date Due:  02/26/2021
 
 Purpose: API use: uname << getenv << fork << wait and system
+
 Execution: ./hw2.exe
 
 *******************************************************/
