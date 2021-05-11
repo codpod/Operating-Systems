@@ -1,8 +1,4 @@
-# COURSE:     CSCI 480-2
-# PROGRAM:    Assignment 2
 # PROGRAMMER: Cody McAntire
-# Z ID:       z1859456
-# DATE DUE:   02/26/21
 
 # Compiler variables
 CCFLAGS = -ansi -Wall -std=c++11 -Wextra
